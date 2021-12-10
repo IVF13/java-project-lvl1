@@ -1,3 +1,3 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/IVF13/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/IVF13/java-project-lvl1/actions)
-![Personal Actions Status](https://github.com/IVF13/java-project-lvl1/workflows/github-actions-demo/badge.svg)
+![Second badge](https://github.com/github/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
