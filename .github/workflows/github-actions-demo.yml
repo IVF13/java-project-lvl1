@@ -23,4 +23,4 @@ jobs:
       - name: Build with Gradle
         run: make build
       - name: Test       
-        run: touch text.html
+        run: echIt was just builded"
