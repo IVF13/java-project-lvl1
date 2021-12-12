@@ -3,3 +3,4 @@
 [![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)](https://github.com/IVF13/java-project-lvl1/actions)
 
 https://asciinema.org/a/455233
+https://asciinema.org/a/455668
