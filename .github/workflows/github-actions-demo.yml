@@ -22,5 +22,10 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Build with Gradle
         run: make build
+      - name: Badge Action
+        uses: emibcn/badge-action@v1.2.4
+
+        
+      
             
         
