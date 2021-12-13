@@ -9,14 +9,15 @@ public class App {
         final int calculatorCase = 3;
         final int gcdCase = 4;
         final int aProgressionCase = 5;
-        final int exitCase = 0;
+        final int primeCase = 6;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(greetCase + " - Greet");
         System.out.println(evenCase + " - Even");
         System.out.println(calculatorCase + " - Calc");
         System.out.println(gcdCase + " - GCD");
         System.out.println(aProgressionCase + " - Progression");
-        System.out.println(exitCase + " - Exit");
+        System.out.println(primeCase + " - Prime");
+        System.out.println("0 - Exit");
         Scanner choice = new Scanner(System.in);
         System.out.print("Your choice: ");
         if (choice.hasNextInt()) {
@@ -34,10 +35,11 @@ public class App {
                     Logic.gcdPlay();
                     break;
                 case (aProgressionCase):
-                    Logic.aProgression();
+                    Logic.aProgressionPlay();
                     break;
-                case (exitCase):
-                    System.exit(0);
+                case (primeCase):
+                    Logic.primePlay();
+                    break;
                 default:
                     break;
             }
