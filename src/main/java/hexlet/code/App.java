@@ -4,39 +4,38 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        final int greetCase = 1;
+        final int evenCase = 2;
+        final int calculatorCase = 3;
+        final int gcdCase = 4;
+        final int exitCase = 0;
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("0 - Exit");
+        System.out.println(greetCase + " - Greet");
+        System.out.println(evenCase + " - Even");
+        System.out.println(calculatorCase + " - Calc");
+        System.out.println(gcdCase + " - GCD");
+        System.out.println(exitCase + " - Exit");
         Scanner choice = new Scanner(System.in);
         System.out.print("Your choice: ");
         if (choice.hasNextInt()) {
             switch (choice.nextInt()) {
-                case (1):
+                case (greetCase):
                     Cli.greet();
-                    System.exit(0);
-                case (2):
+                    break;
+                case (evenCase):
                     Logic.evenPlay();
-                    System.exit(0);
-                case (3):
+                    break;
+                case (calculatorCase):
                     Logic.calculatorPlay();
-                    System.exit(0);
-                case (0):
+                    break;
+                case (gcdCase):
+                    Logic.gcdPlay();
+                    break;
+                case (exitCase):
                     System.exit(0);
                 default:
-                    System.exit(0);
+                    break;
             }
-            /*int number = choice.nextInt();
-            if (number == 1) {
-                Cli.greet();
-            } else if (number == 2) {
-                Logic.evenPlay();
-            } else if (number == 3) {
-                Logic.calculatorPlay();
-            } else if (number == 0) {
-                System.exit(0);
-            }*/
         }
     }
 }
