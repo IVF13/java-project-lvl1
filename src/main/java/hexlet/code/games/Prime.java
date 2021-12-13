@@ -19,10 +19,10 @@ public class Prime {
             boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(num));
 
             if (probablePrime) {
-                System.out.println("(Correct answer is yes)");
+                //System.out.println("(Correct answer is yes)");
                 Logic.toExamineAndCompare("yes", Integer.toString(num), name);
             } else {
-                System.out.println("(Correct answer is no)");
+                //System.out.println("(Correct answer is no)");
                 Logic.toExamineAndCompare("no", Integer.toString(num), name);
             }
         }
