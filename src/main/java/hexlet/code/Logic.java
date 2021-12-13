@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import java.math.BigInteger;
+
 import java.util.Scanner;
 
 public class Logic {
@@ -102,7 +104,7 @@ public class Logic {
         System.out.println("Congratulations, " + name + "!");
     }
 
-    public static void aProgression() {
+    public static void aProgressionPlay() {
         final int winsNum = 3;
         final int arrLenLowerNum = 5;
         final int arrLenUpperNum = 10;
@@ -128,9 +130,32 @@ public class Logic {
                     arr.append(" " + progArr[i] + " ");
                 }
             }
-            System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
+            //System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
             toExamineAndCompare(Integer.toString(progArr[hiddenElementNum]), arr.toString(), name);
             progArr = null;
+        }
+        System.out.println("Congratulations, " + name + "!");
+    }
+
+    public static void primePlay() {
+        final int winsNum = 3;
+        final int randUpperNum = 20;
+
+        String name = Cli.greet();
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
+        for (int i = 0; i < winsNum; i++) {
+            Integer num = (int) (Math.random() * randUpperNum);
+            BigInteger bigInteger = BigInteger.valueOf(num);
+            boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(num));
+
+            if (probablePrime) {
+                System.out.println("(Correct answer is yes)");
+                toExamineAndCompare("yes", Integer.toString(num), name);
+            } else {
+                System.out.println("(Correct answer is no)");
+                toExamineAndCompare("no", Integer.toString(num), name);
+            }
         }
         System.out.println("Congratulations, " + name + "!");
     }
