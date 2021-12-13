@@ -23,11 +23,12 @@ public class Progression {
             for (int i = 0; i < progArr.length; i++) {
                 if (i != 0) {
                     progArr[i] = progArr[i - 1] + step;
+                    arr.append(" ");
                 }
                 if (i == hiddenElementNum) {
-                    arr.append(" .. ");
+                    arr.append("..");
                 } else {
-                    arr.append(" " + progArr[i] + " ");
+                    arr.append(progArr[i]);
                 }
             }
             //System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
