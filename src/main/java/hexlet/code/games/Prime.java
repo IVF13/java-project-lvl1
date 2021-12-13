@@ -14,7 +14,7 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < winsNum; i++) {
-            Integer num = (int) (Math.random() * randUpperNum);
+            int num = (int) (Math.random() * randUpperNum);
             BigInteger bigInteger = BigInteger.valueOf(num);
             boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(num));
 
