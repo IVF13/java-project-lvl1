@@ -1,15 +1,16 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.Logic;
+import hexlet.code.Engine;
 
 public class Progression {
-    public static void aProgressionPlay() {
-        final int winsNum = 3;
+    public static void aProgressionPlay(int winsNum) {
         final int arrLenLowerNum = 5;
         final int arrLenUpperNum = 10;
         final int randomFirstProgNum = 20;
         final int randStepUpperNum = 10;
+        String[] generatedProgressions = new String[winsNum];
+        String[] answers = new String[winsNum];
 
         String name = Cli.greet();
         System.out.println("What number is missing in the progression?");
@@ -31,10 +32,11 @@ public class Progression {
                     arr.append(progArr[i]);
                 }
             }
+            answers[j] = Integer.toString(progArr[hiddenElementNum]);
+            generatedProgressions[j] = arr.toString();
             //System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
-            Logic.toExamineAndCompare(Integer.toString(progArr[hiddenElementNum]), arr.toString(), name);
             progArr = null;
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.toExamineAndCompare(answers, generatedProgressions, name, winsNum);
     }
 }
