@@ -3,8 +3,9 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class App {
         final int gcdCase = 4;
         final int aProgressionCase = 5;
         final int primeCase = 6;
+        final int winsNum = 3;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(greetCase + " - Greet");
         System.out.println(evenCase + " - Even");
@@ -32,19 +34,19 @@ public class App {
                     Cli.greet();
                     break;
                 case (evenCase):
-                    Even.evenPlay();
+                    Even.evenPlay(winsNum);
                     break;
                 case (calculatorCase):
-                    Calculator.calculatorPlay();
+                    Calculator.calculatorPlay(winsNum);
                     break;
                 case (gcdCase):
-                    GCD.gcdPlay();
+                    GCD.gcdPlay(winsNum);
                     break;
                 case (aProgressionCase):
-                    Progression.aProgressionPlay();
+                    Progression.aProgressionPlay(winsNum);
                     break;
                 case (primeCase):
-                    Prime.primePlay();
+                    Prime.primePlay(winsNum);
                     break;
                 default:
                     break;
