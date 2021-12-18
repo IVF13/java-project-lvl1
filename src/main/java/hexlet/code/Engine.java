@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     public static void toExamineAndCompare(String[] answers, String[] expression, String name, int winsNum) {
-        for (int i=0; i < winsNum; i++) {
+        for (int i = 0; i < winsNum; i++) {
             System.out.println("Question: " + expression[i]);
             Scanner ask = new Scanner(System.in);
             System.out.print("Your answer: ");
