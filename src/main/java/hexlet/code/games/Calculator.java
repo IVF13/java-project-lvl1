@@ -1,11 +1,10 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.Logic;
+import hexlet.code.Engine;
 
 public class Calculator {
-    public static void calculatorPlay() {
-        final int winsNum = 3;
+    public static void calculatorPlay(int winsNum) {
         final int signChoice = 4;
         final int firstUpperNum = 20;
         final int secondUpperNum = 20;
@@ -15,6 +14,8 @@ public class Calculator {
         int secondNum;
         int num;
         String sign = "";
+        String[] generatedExpressions = new String[winsNum];
+        String[] answers = new String[winsNum];
 
         String name = Cli.greet();
 
@@ -32,9 +33,10 @@ public class Calculator {
                 num = firstNum - secondNum;
                 sign = "-";
             }
+            answers[i] = Integer.toString(num);
+            generatedExpressions[i] = firstNum + " " + sign + " " + secondNum;
             //System.out.println("(Correct answer is " + num + ")");
-            Logic.toExamineAndCompare(Integer.toString(num), firstNum + " " + sign + " " + secondNum, name);
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.toExamineAndCompare(answers, generatedExpressions, name, winsNum);
     }
 }
