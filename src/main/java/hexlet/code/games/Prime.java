@@ -1,14 +1,15 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.Logic;
+import hexlet.code.Engine;
 
 import java.math.BigInteger;
 
 public class Prime {
-    public static void primePlay() {
-        final int winsNum = 3;
+    public static void primePlay(int winsNum) {
         final int randUpperNum = 20;
+        String[] generatedNumbers = new String[winsNum];
+        String[] answers = new String[winsNum];
 
         String name = Cli.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
@@ -20,12 +21,14 @@ public class Prime {
 
             if (probablePrime) {
                 //System.out.println("(Correct answer is yes)");
-                Logic.toExamineAndCompare("yes", Integer.toString(num), name);
+                answers[i] = "yes";
+                generatedNumbers[i] = Integer.toString(num);
             } else {
                 //System.out.println("(Correct answer is no)");
-                Logic.toExamineAndCompare("no", Integer.toString(num), name);
+                answers[i] = "no";
+                generatedNumbers[i] = Integer.toString(num);
             }
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum);
     }
 }
