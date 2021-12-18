@@ -1,15 +1,16 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.Logic;
+import hexlet.code.Engine;
 
 public class GCD {
-    public static void gcdPlay() {
-        final int winsNum = 3;
+    public static void gcdPlay(int winsNum) {
         final int firstUpperNum = 100;
         final int secondUpperNum = 100;
         int firstNum;
         int secondNum;
+        String[] generatedGCD = new String[winsNum];
+        String[] answers = new String[winsNum];
 
         String name = Cli.greet();
         System.out.println("Find the greatest common divisor of given numbers.");
@@ -24,9 +25,10 @@ public class GCD {
                 a = b;
                 b = tmp;
             }
-            //System.out.println("(Correct answer is " + a + ")");
-            Logic.toExamineAndCompare(Integer.toString(a), firstNum + " " + secondNum, name);
+            answers[i] = Integer.toString(a);
+            generatedGCD[i] = firstNum + " " + secondNum;
+            System.out.println("(Correct answer is " + a + ")");
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.toExamineAndCompare(answers, generatedGCD, name, winsNum);
     }
 }
