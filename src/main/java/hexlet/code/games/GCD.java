@@ -27,7 +27,7 @@ public class GCD {
             }
             answers[i] = Integer.toString(a);
             generatedGCD[i] = firstNum + " " + secondNum;
-            System.out.println("(Correct answer is " + a + ")");
+            //System.out.println("(Correct answer is " + a + ")");
         }
         Engine.toExamineAndCompare(answers, generatedGCD, name, winsNum);
     }
