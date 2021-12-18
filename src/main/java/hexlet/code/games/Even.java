@@ -1,26 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.Logic;
+import hexlet.code.Engine;
 
 public class Even {
-    public static void evenPlay() {
-        final int winsNum = 3;
+    public static void evenPlay(int winsNum) {
         final int upperNum = 100;
         int num;
-        String trueAnswer = "";
+        String[] generatedNumbers = new String[winsNum];
+        String[] answers = new String[winsNum];
         String name = Cli.greet();
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < winsNum; i++) {
             num = (int) (Math.random() * upperNum);
             if (num % 2 == 0) {
-                trueAnswer = "yes";
+                answers[i] = "yes";
             } else {
-                trueAnswer = "no";
+                answers[i] = "no";
             }
-            Logic.toExamineAndCompare(trueAnswer, Integer.toString(num), name);
+            generatedNumbers[i] = Integer.toString(num);
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum);
     }
 }
