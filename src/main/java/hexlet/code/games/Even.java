@@ -6,7 +6,7 @@ import hexlet.code.Engine;
 
 
 public class Even {
-    public static final String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final String QUEST = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void evenPlay(int winsNum) {
         final int upperNum = 100;
@@ -21,15 +21,11 @@ public class Even {
             generatedNumbers[i] = Integer.toString(num);
         }
 
-        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum, condition);
+        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum, QUEST);
     }
 
     private static boolean evenCheck(int num) {
-        if (num % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (num % 2 == 0);
     }
 
 }
