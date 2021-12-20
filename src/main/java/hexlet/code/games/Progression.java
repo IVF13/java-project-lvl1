@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 import hexlet.code.Engine;
 
 public class Progression {
-    public static final String condition = "What number is missing in the progression?";
+    public static final String QUEST = "What number is missing in the progression?";
 
     public static void aProgressionPlay(int winsNum) {
         final int arrLenLowerNum = 5;
@@ -38,7 +38,7 @@ public class Progression {
             //System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
             progArr = null;
         }
-        Engine.toExamineAndCompare(answers, generatedProgressions, name, winsNum, condition);
+        Engine.toExamineAndCompare(answers, generatedProgressions, name, winsNum, QUEST);
     }
 
     private static int[] progGeneration(int arrLenLowerNum, int arrLenUpperNum,
