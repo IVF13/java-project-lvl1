@@ -7,7 +7,7 @@ import hexlet.code.Engine;
 import java.math.BigInteger;
 
 public class Prime {
-    public static final String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static final String QUEST = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void primePlay(int winsNum) {
         final int randUpperNum = 20;
         String[] generatedNumbers = new String[winsNum];
@@ -30,6 +30,6 @@ public class Prime {
                 generatedNumbers[i] = Integer.toString(num);
             }
         }
-        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum, condition);
+        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum, QUEST);
     }
 }
