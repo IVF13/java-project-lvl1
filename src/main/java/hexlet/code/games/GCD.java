@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Utils;
 import hexlet.code.Engine;
 
 public class GCD {
+    public static final String condition = "Find the greatest common divisor of given numbers.";
+
     public static void gcdPlay(int winsNum) {
         final int firstUpperNum = 100;
         final int secondUpperNum = 100;
@@ -13,22 +16,24 @@ public class GCD {
         String[] answers = new String[winsNum];
 
         String name = Cli.greet();
-        System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < winsNum; i++) {
-            firstNum = (int) (Math.random() * firstUpperNum);
-            secondNum = (int) (Math.random() * secondUpperNum);
-            int a = firstNum;
-            int b = secondNum;
-            while (b != 0) {
-                int tmp = a % b;
-                a = b;
-                b = tmp;
-            }
-            answers[i] = Integer.toString(a);
+            firstNum = Utils.genRandInt(firstUpperNum);
+            secondNum = Utils.genRandInt(secondUpperNum);
+            answers[i] = Integer.toString(gcdSearch(firstNum, secondNum));
             generatedGCD[i] = firstNum + " " + secondNum;
-            //System.out.println("(Correct answer is " + a + ")");
         }
-        Engine.toExamineAndCompare(answers, generatedGCD, name, winsNum);
+        Engine.toExamineAndCompare(answers, generatedGCD, name, winsNum, condition);
     }
+
+    private static int gcdSearch(int a, int b) {
+        while (b != 0) {
+            int tmp = a % b;
+            a = b;
+            b = tmp;
+        }
+        //System.out.println("(Correct answer is " + a + ")");
+        return a;
+    }
+
 }
