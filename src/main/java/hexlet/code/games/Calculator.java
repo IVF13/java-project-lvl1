@@ -6,7 +6,7 @@ import hexlet.code.Engine;
 
 
 public class Calculator {
-    public static final String condition = "What is the result of the expression?";
+    public static final String QUEST = "What is the result of the expression?";
     public static void calculatorPlay(int winsNum) {
         final int signChoiceNum = 4;
         final int firstUpperNum = 20;
@@ -37,6 +37,6 @@ public class Calculator {
             generatedExpressions[i] = firstNum + " " + sign + " " + secondNum;
             //System.out.println("(Correct answer is " + num + ")");
         }
-        Engine.toExamineAndCompare(answers, generatedExpressions, name, winsNum, condition);
+        Engine.toExamineAndCompare(answers, generatedExpressions, name, winsNum, QUEST);
     }
 }
