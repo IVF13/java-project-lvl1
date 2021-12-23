@@ -8,10 +8,6 @@ public class Progression {
     public static final String QUEST = "What number is missing in the progression?";
 
     public static void aProgressionPlay(int winsNum) {
-        final int arrLenLowerNum = 5;
-        final int arrLenUpperNum = 10;
-        final int randomFirstProgNum = 20;
-        final int randomStepUpperNum = 10;
         String[] generatedProgressions = new String[winsNum];
         String[] answers = new String[winsNum];
 
@@ -20,7 +16,7 @@ public class Progression {
         for (int j = 0; j < winsNum; j++) {
             StringBuilder arr = new StringBuilder();
 
-            int[] progArr = progGeneration(arrLenLowerNum, arrLenUpperNum, randomFirstProgNum, randomStepUpperNum);
+            int[] progArr = progGeneration();
             int hiddenElementNum = (int) (Math.random() * (progArr.length));
 
             for (int i = 0; i < progArr.length; i++) {
@@ -35,14 +31,17 @@ public class Progression {
             }
             answers[j] = Integer.toString(progArr[hiddenElementNum]);
             generatedProgressions[j] = arr.toString();
-            //System.out.println("(Correct answer is " + progArr[hiddenElementNum] + ")");
-            progArr = null;
+
         }
         Engine.toExamineAndCompare(answers, generatedProgressions, name, winsNum, QUEST);
     }
 
-    private static int[] progGeneration(int arrLenLowerNum, int arrLenUpperNum,
-                                        int randomFirstProgNum, int randomStepUpperNum) {
+    private static int[] progGeneration() {
+        final int randomFirstProgNum = 20;
+        final int randomStepUpperNum = 10;
+        final int arrLenLowerNum = 5;
+        final int arrLenUpperNum = 10;
+
         int[] progArr = new int[arrLenLowerNum + Utils.genRandInt(arrLenUpperNum)];
         int step = 1 + Utils.genRandInt(randomStepUpperNum);
         progArr[0] = Utils.genRandInt(randomFirstProgNum);
