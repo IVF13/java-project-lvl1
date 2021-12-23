@@ -10,7 +10,7 @@ public class Calculator {
     public static void calculatorPlay(int winsNum) {
         final int firstUpperNum = 20;
         final int secondUpperNum = 20;
-        int num;
+        int num = 0;
 
         String[] generatedExpressions = new String[winsNum];
         String[] answers = new String[winsNum];
@@ -31,7 +31,6 @@ public class Calculator {
                     num = firstNum - secondNum;
                     break;
                 default:
-                    num = 0;
                     break;
             }
 
@@ -42,18 +41,8 @@ public class Calculator {
     }
 
     private static String signChoose() {
-        final int signChoiceNum = 4;
-        final int multiply = 2;
-        final int plus = 3;
-        String sign = "";
-
-        if (Utils.genRandInt(signChoiceNum) == plus) {
-            sign = "+";
-        } else if (Utils.genRandInt(signChoiceNum) == multiply) {
-            sign = "*";
-        } else {
-            sign = "-";
-        }
-        return sign;
+        String[] signs = {"-", "*", "+"};
+        final int signChoiceNum = 3;
+        return signs[Utils.genRandInt(signChoiceNum)];
     }
 }
