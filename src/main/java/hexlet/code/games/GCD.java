@@ -32,7 +32,7 @@ public class GCD {
             a = b;
             b = tmp;
         }
-        //System.out.println("(Correct answer is " + a + ")");
+
         return a;
     }
 
