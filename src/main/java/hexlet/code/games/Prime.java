@@ -19,7 +19,7 @@ public class Prime {
         for (int i = 0; i < winsNum; i++) {
             int num = Utils.genRandInt(randUpperNum);
             BigInteger bigInteger = BigInteger.valueOf(num);
-            answers[i] = bigInteger.isProbablePrime((int) Math.log(num)) ? "yes" : "no";
+            answers[i] = bigInteger.isProbablePrime(num) ? "yes" : "no";
             generatedNumbers[i] = Integer.toString(num);
         }
 
