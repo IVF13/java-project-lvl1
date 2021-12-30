@@ -1,23 +1,22 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 import hexlet.code.Engine;
+
 
 public class Calculator {
     public static final String QUEST = "What is the result of the expression?";
 
-    public static void calculatorPlay(int winsNum) {
-        final int firstUpperNum = 20;
-        final int secondUpperNum = 20;
+    public static void calculatorPlay() {
+        final int numGenUpperNum = 20;
         int num = 0;
-
-        String[] generatedExpressions = new String[winsNum];
+        int winsNum = Engine.WINSNUM;
+        String[] generatedExpressionsQuestionSet = new String[winsNum];
         String[] answers = new String[winsNum];
-        String name = Cli.greet();
+
         for (int i = 0; i < winsNum; i++) {
-            int firstNum = Utils.genRandInt(firstUpperNum);
-            int secondNum = Utils.genRandInt(secondUpperNum);
+            int firstNum = Utils.genRandInt(numGenUpperNum);
+            int secondNum = Utils.genRandInt(numGenUpperNum);
             String sign = signChoose();
 
             switch (sign) {
@@ -35,14 +34,14 @@ public class Calculator {
             }
 
             answers[i] = Integer.toString(num);
-            generatedExpressions[i] = firstNum + " " + sign + " " + secondNum;
+            generatedExpressionsQuestionSet[i] = firstNum + " " + sign + " " + secondNum;
         }
-        Engine.toExamineAndCompare(answers, generatedExpressions, name, winsNum, QUEST);
+        Engine.toExamineAndCompare(answers, generatedExpressionsQuestionSet, QUEST);
     }
 
     private static String signChoose() {
         String[] signs = {"-", "*", "+"};
-        final int signChoiceNum = 3;
+        final int signChoiceNum = signs.length;
         return signs[Utils.genRandInt(signChoiceNum)];
     }
 }
