@@ -3,10 +3,11 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
-    public static void toExamineAndCompare(String[] ans, String[] exp, String name, int winsNum, String question) {
+    public static final int WINSNUM = 3;
+    public static void toExamineAndCompare(String[] ans, String[] exp, String question) {
+        String name = Cli.greet();
         System.out.println(question);
-        for (int i = 0; i < winsNum; i++) {
+        for (int i = 0; i < WINSNUM; i++) {
             System.out.println("Question: " + exp[i]);
             Scanner ask = new Scanner(System.in);
             System.out.print("Your answer: ");
