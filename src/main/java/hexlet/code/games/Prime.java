@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 import hexlet.code.Engine;
 
@@ -9,20 +8,19 @@ import java.math.BigInteger;
 public class Prime {
     public static final String QUEST = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void primePlay(int winsNum) {
-        final int randUpperNum = 20;
-        String[] generatedNumbers = new String[winsNum];
+    public static void primePlay() {
+        int winsNum = Engine.WINSNUM;
+        final int numGenUpperNum = 20;
+        String[] generatedNumbersQuestionSet = new String[winsNum];
         String[] answers = new String[winsNum];
 
-        String name = Cli.greet();
-
         for (int i = 0; i < winsNum; i++) {
-            int num = Utils.genRandInt(randUpperNum);
-            BigInteger bigInteger = BigInteger.valueOf(num);
-            answers[i] = bigInteger.isProbablePrime(num) ? "yes" : "no";
-            generatedNumbers[i] = Integer.toString(num);
+            int num = Utils.genRandInt(numGenUpperNum);
+            BigInteger numForChecking = BigInteger.valueOf(num);
+            answers[i] = numForChecking.isProbablePrime(num) ? "yes" : "no";
+            generatedNumbersQuestionSet[i] = Integer.toString(num);
         }
 
-        Engine.toExamineAndCompare(answers, generatedNumbers, name, winsNum, QUEST);
+        Engine.toExamineAndCompare(answers, generatedNumbersQuestionSet, QUEST);
     }
 }
