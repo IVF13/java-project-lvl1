@@ -17,7 +17,6 @@ public class App {
         final int gcdCase = 4;
         final int aProgressionCase = 5;
         final int primeCase = 6;
-        final int winsNum = 3;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(greetCase + " - Greet");
         System.out.println(evenCase + " - Even");
@@ -34,19 +33,19 @@ public class App {
                     Cli.greet();
                     break;
                 case (evenCase):
-                    Even.evenPlay(winsNum);
+                    Even.evenPlay();
                     break;
                 case (calculatorCase):
-                    Calculator.calculatorPlay(winsNum);
+                    Calculator.calculatorPlay();
                     break;
                 case (gcdCase):
-                    GCD.gcdPlay(winsNum);
+                    GCD.gcdPlay();
                     break;
                 case (aProgressionCase):
-                    Progression.aProgressionPlay(winsNum);
+                    Progression.aProgressionPlay();
                     break;
                 case (primeCase):
-                    Prime.primePlay(winsNum);
+                    Prime.primePlay();
                     break;
                 default:
                     break;
